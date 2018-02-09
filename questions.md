@@ -1,0 +1,14 @@
+- Which methods do we really need?
+- You've stated in class that we don't have to implement our class to utilize the allocator and iterator types. What should we implement in place to preserve that functionality, or should we simply drop the method?
+- Some constructors on the cplusplus website you presented in class construct a container with no assioated elements, but our project documentation states to create the container with 1 element. I assume we should go with the later?
+- Should the VectorInt::clear delete the buffer AND create a new buffer? If so should the new buffer be a size of 1 or 0?
+- Should the VectorInt::end method return `*(this.buffer + this.size + 1)` or `*(this.buffer + this.size)`
+ - (Documentation states past-the-end element in the vector container)
+- Should the VectorInt::erase(int position) method create a new buffer, copy the values (skipping the indicated position value), and then reassigning the buffer (wasteful method). OR should the method move everything to the right of the position to the left and set size = size - 1? Same question applies to the VectorInt::erase(int first, int last) (range version).
+ - See https://stackoverflow.com/a/13812501 for a comparison of potential approaches.
+- What's the difference between the max_size and the capacity methods?
+ - Should the result returned from max_size be that of the maximum size of an array in C++ or something of that nature?
+- I have code from when you discussed the VectorInt::operator method in class, but I'm still a bit confused as to how it's called and its purpose in our class.
+- If we're opting not to implement the iterator types, how exactly should we add rbegin or rend in our class?
+- In context of VectorInt::swap(VectorInt swap), should we make the host/local/this object the size of the param object if smaller/bigger?
+ - The cplusplus docs states that sizes may differ, but I wasn't 100% which should proceed over the other.
